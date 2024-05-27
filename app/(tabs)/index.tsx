@@ -1,14 +1,13 @@
 import { StyleSheet } from 'react-native';
 
-import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
 
 export default function TabOneScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/index.tsx" />
+      <View style={styles.callbtn}>
+        <Text style={styles.text}>たすけて</Text>
+      </View>
     </View>
   );
 }
@@ -17,15 +16,30 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    paddingVertical: 20
+  },
+  scview: {
+    width: "100%"
   },
   title: {
-    fontSize: 20,
-    fontWeight: 'bold',
+    fontSize: 15,
   },
   separator: {
-    marginVertical: 30,
+    marginVertical: 14,
     height: 1,
-    width: '80%',
+    width: '90%',
   },
+  callbtn: {
+    width: "30%",
+    height: 150,
+    borderRadius: 20,
+    backgroundColor: "#fff",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  text: {
+    color: "#000",
+    fontSize: 30
+  }
 });

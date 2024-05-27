@@ -26,10 +26,18 @@ export default function TabLayout() {
         // to prevent a hydration error in React Navigation v6.
         headerShown: useClientOnlyValue(false, true),
       }}>
+
+      <Tabs.Screen
+        name="two"
+        options={{
+          title: 'ちゃっと',
+          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+        }}
+      />
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Tab One',
+          title: 'ホーム',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
           headerRight: () => (
             <Link href="/modal" asChild>
@@ -39,7 +47,7 @@ export default function TabLayout() {
                     name="info-circle"
                     size={25}
                     color={Colors[colorScheme ?? 'light'].text}
-                    style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
+                    style={{ marginRight: 15, opacity: pressed ? 0.4 : 1 }}
                   />
                 )}
               </Pressable>
@@ -48,9 +56,9 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="two"
+        name="account"
         options={{
-          title: 'Tab Two',
+          title: 'アカウント',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
