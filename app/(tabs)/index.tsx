@@ -6,7 +6,10 @@ export default function TabOneScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.callbtn}>
-        <Text style={styles.text}>たすけて</Text>
+        <Text style={styles.text}>たすけをよぶ</Text>
+      </View>
+      <View style={styles.callbtn}>
+        <Text style={styles.text}>ちゃっと</Text>
       </View>
     </View>
   );
@@ -30,10 +33,10 @@ const styles = StyleSheet.create({
     width: '90%',
   },
   callbtn: {
-    width: "30%",
+    width: "60%",
     height: 150,
     borderRadius: 20,
-    backgroundColor: "#fff",
+    backgroundColor: "#ddd",
     display: "flex",
     justifyContent: "center",
     alignItems: "center"
