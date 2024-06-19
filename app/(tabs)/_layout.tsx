@@ -1,11 +1,7 @@
 import React from 'react';
-import FontAwesome from '@expo/vector-icons/FontAwesome';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
-import { Link, Tabs } from 'expo-router';
-import { Pressable } from 'react-native';
-
+import {  Tabs } from 'expo-router';
 import Colors from '@/constants/Colors';
-import { useColorScheme } from '@/components/useColorScheme';
 import { useClientOnlyValue } from '@/components/useClientOnlyValue';
 
 function TabBarIconMaterial(props: {
@@ -13,11 +9,10 @@ function TabBarIconMaterial(props: {
   color: string;
 }) {
 
-  return <MaterialCommunityIcons size={24} {...props}/>
+  return <MaterialCommunityIcons size={34} {...props}/>
 }
 
 export default function TabLayout() {
-
   return (
     <Tabs
       screenOptions={{
@@ -27,40 +22,19 @@ export default function TabLayout() {
         headerShown: useClientOnlyValue(false, true),
       }}>
       <Tabs.Screen
-        name="two"
-        options={{
-          title: 'ちゃっと',
-          tabBarIcon: ({ color }) => <TabBarIconMaterial name="chat-processing" color={color} />,
-        }}
-      />
-      <Tabs.Screen
         name="index"
         options={{
           title: 'ホーム',
           tabBarIcon: ({ color }) => <TabBarIconMaterial name="home" color={color} />,
-          headerRight: () => (
-            <Link href="/modal" asChild>
-              <Pressable>
-                {({ pressed }) => (
-                  <FontAwesome
-                    name="info-circle"
-                    size={25}
-                    color={Colors['light'].text}
-                    style={{ marginRight: 15, opacity: pressed ? 0.4 : 1 }}
-                  />
-                )}
-              </Pressable>
-            </Link>
-          ),
         }}
       />
       <Tabs.Screen
         name="account"
         options={{
-          title: 'アカウント',
-          tabBarIcon: ({ color }) => <TabBarIconMaterial name="human-male-child" color={color} />,
+          title: 'account',
+          tabBarIcon: ({ color }) => <TabBarIconMaterial name="magnify" color={color} />,
         }}
-      />
+        />
     </Tabs>
   );
 }
